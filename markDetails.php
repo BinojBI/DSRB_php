@@ -120,7 +120,7 @@ Details
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">Statistics</th>
+        <th scope="col">Analysis</th>
         <th scope="col"></th>
       </tr>
     </thead>

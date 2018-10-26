@@ -10,12 +10,23 @@ require 'db/connection.php';
    $userName = $_POST['userName'];
    $password = $_POST['password'];
 
-
+   $studentName = $firstName.' '.$lastName;
+   $registationFee = '';
+   $facilityFee = '';
 
    $query = "INSERT INTO student(firstName,lastName,regNo,email,userName,password) VALUES ('{$firstName}','{$lastName}','{$regNo}','{$email}','{$userName}','{$password}')";
    $result = mysqli_query($connection, $query);
 
+   $queryP = "INSERT INTO payments(studentName,regNo,registationFee,facilityFee) VALUES ('{$studentName}','{$regNo}','{$registationFee}','{$facilityFee}')";
+   $resultP = mysqli_query($connection, $queryP);
+
    if($result){
+     echo "1 record added";
+   }else{
+     echo "databse query failed";
+   }
+
+   if($resultP){
      echo "1 record added";
    }else{
      echo "databse query failed";
