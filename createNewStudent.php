@@ -3,6 +3,7 @@ require 'db/connection.php';
  ?>
 <?php
  if(isset($_POST['submit'])){
+
    $firstName = $_POST['firstName'];
    $lastName = $_POST['lastName'];
    $regNo = $_POST['regNo'];
@@ -21,6 +22,7 @@ require 'db/connection.php';
    $resultP = mysqli_query($connection, $queryP);
 
    if($result){
+     echo "<script> location.href='student.php'; </script>";
      echo "1 record added";
    }else{
      echo "databse query failed";

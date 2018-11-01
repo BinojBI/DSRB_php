@@ -26,6 +26,7 @@ require 'db/connection.php';
    $result = mysqli_query($connection, $queryPost);
 
    if($result){
+     echo "<script> location.href='marks.php'; </script>";
      echo "1 record added";
    }else{
      echo "databse query failed";
