@@ -51,7 +51,18 @@ $numOfRow = mysqli_num_rows($result_set);
         <td>'.  $regNo .'</td>
         <td>'. $email .'</td>
         <td>'. $userName .'</td>
-        <td><a href="editStudent.php">edit</a> | <a href="deleteStudent.php">delete</a> </td>
+
+        <td><form  action="editStudent.php" method="post">
+          <button type="submit" class="btn btn-link">Edit</button>
+          <input type="hidden" value="'.$id.'" name="id">
+        </form>
+        </td>
+        <td>
+        <form  action="deleteStudent.php" method="post">
+          <button type="submit" class="btn btn-link">Delete</button>
+          <input type="hidden" value="'.$id.'" name="id">
+        </form></td>
+
       </tr>';
     } ?>
 

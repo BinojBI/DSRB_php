@@ -47,6 +47,7 @@ $numOfRow = mysqli_num_rows($result_set);
             <td>  <form action="updatePayment.php" method="post">
                 <button type="submit" class="btn btn-link">Update</button>
                 <input type="hidden" value="'.$studentName.'" name="studentName">
+                <input type="hidden" value="'.$regNo.'" name="regNo">
               </form></td>
           </tr>';
         } ?>
