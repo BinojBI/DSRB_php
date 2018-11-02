@@ -13,7 +13,8 @@ $numOfRow = mysqli_num_rows($result_set);
     <title>Payments page</title>
   </head>
   <body>
-      <div class="container">
+      <div class="container"><br>
+        <h2>Students' Payments</h2><br>
         <table class="table">
       <thead>
         <tr>

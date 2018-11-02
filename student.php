@@ -16,57 +16,60 @@ $numOfRow = mysqli_num_rows($result_set);
     <title></title>
   </head>
   <body>
-    <br>
-    <a href="createNewStudent.php">Create new</a><br><br>
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">Registation No</th>
-      <th scope="col">Email</th>
-      <th scope="col">User Name</th>
-      <th scope="col">#</th>
+    <div class="container">
+      <br>
+      <a href="createNewStudent.php">Create new</a><br><br>
+      <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Registation No</th>
+        <th scope="col">Email</th>
+        <th scope="col">User Name</th>
+        <th scope="col">#</th>
 
-    </tr>
-  </thead>
-  <tbody>
-    <?php
+      </tr>
+      </thead>
+      <tbody>
+      <?php
 
-    for ($i=1; $i<= $numOfRow ; $i++) {
-      $record = mysqli_fetch_assoc($result_set);
+      for ($i=1; $i<= $numOfRow ; $i++) {
+        $record = mysqli_fetch_assoc($result_set);
 
-      $id = $record['id'];
-      $firstName = $record['firstName'];
-      $lastName = $record['lastName'];
-      $regNo = $record['regNo'];
-      $email = $record['email'];
-      $userName = $record['userName'];
+        $id = $record['id'];
+        $firstName = $record['firstName'];
+        $lastName = $record['lastName'];
+        $regNo = $record['regNo'];
+        $email = $record['email'];
+        $userName = $record['userName'];
 
-    echo '<tr>
-        <td>'. $id . '</td>
-        <td>'. $firstName .'</td>
-        <td>'. $lastName.'</td>
-        <td>'.  $regNo .'</td>
-        <td>'. $email .'</td>
-        <td>'. $userName .'</td>
+      echo '<tr>
+          <td>'. $id . '</td>
+          <td>'. $firstName .'</td>
+          <td>'. $lastName.'</td>
+          <td>'.  $regNo .'</td>
+          <td>'. $email .'</td>
+          <td>'. $userName .'</td>
 
-        <td><form  action="editStudent.php" method="post">
-          <button type="submit" class="btn btn-link">Edit</button>
-          <input type="hidden" value="'.$id.'" name="id">
-        </form>
-        </td>
-        <td>
-        <form  action="deleteStudent.php" method="post">
-          <button type="submit" class="btn btn-link">Delete</button>
-          <input type="hidden" value="'.$id.'" name="id">
-        </form></td>
+          <td><form  action="editStudent.php" method="post">
+            <button type="submit" class="btn btn-link">Edit</button>
+            <input type="hidden" value="'.$id.'" name="id">
+          </form>
+          </td>
+          <td>
+          <form  action="deleteStudent.php" method="post">
+            <button type="submit" class="btn btn-link">Delete</button>
+            <input type="hidden" value="'.$id.'" name="id">
+          </form></td>
 
-      </tr>';
-    } ?>
+        </tr>';
+      } ?>
 
-  </tbody>
-</table>
+      </tbody>
+      </table>
+    </div>
+
   </body>
 </html>

@@ -15,43 +15,56 @@ require 'db/connection.php';
      <title>Marks Page</title>
    </head>
    <body>
-<a href="createNewMarks.php">Create new</a><br><br>
-<table class="table">
-<thead>
-<tr>
-  <th scope="col">Id</th>
-  <th scope="col">First Name</th>
-  <th scope="col">Maths</th>
-  <th scope="col">Chemistry</th>
-  <th scope="col">Physics</th>
-  <th scope="col">#</th>
+     <div class="container">
+       <br>
+       <a href="createNewMarks.php">Create new</a><br><br>
+       <table class="table">
+       <thead>
+       <tr>
+         <th scope="col">Id</th>
+         <th scope="col">First Name</th>
+         <th scope="col">Maths</th>
+         <th scope="col">Chemistry</th>
+         <th scope="col">Physics</th>
+         <th scope="col">#</th>
 
-</tr>
-</thead>
-<tbody>
-<?php
+       </tr>
+       </thead>
+       <tbody>
+       <?php
 
-for ($i=1; $i<= $numOfRow ; $i++) {
-  $record = mysqli_fetch_assoc($result_set);
+       for ($i=1; $i<= $numOfRow ; $i++) {
+         $record = mysqli_fetch_assoc($result_set);
 
-  $id = $record['id'];
-  $studentName = $record['studentName'];
-  $maths = $record['maths'];
-  $chemistry = $record['chemistry'];
-  $physics = $record['physics'];
+         $id = $record['id'];
+         $studentName = $record['studentName'];
+         $maths = $record['maths'];
+         $chemistry = $record['chemistry'];
+         $physics = $record['physics'];
 
 
-echo '<tr>
-    <td>'. $id . '</td>
-    <td>'. $studentName .'</td>
-    <td>'. $maths.'</td>
-    <td>'.  $chemistry .'</td>
-    <td>'. $physics .'</td>
-    <td><a href="editMarks.php">edit</a> | <a href="deleteMarks.php">delete</a> </td>
-  </tr>';
-} ?>
+       echo '<tr>
+           <td>'. $id . '</td>
+           <td>'. $studentName .'</td>
+           <td>'. $maths.'</td>
+           <td>'.  $chemistry .'</td>
+           <td>'. $physics .'</td>
+           <td><form  action="editMarks.php" method="post">
+             <button type="submit" class="btn btn-link">Edit</button>
+             <input type="hidden" value="'.$id.'" name="id">
+           </form>
+           </td>
+           <td>
+           <form  action="deleteMarks.php" method="post">
+             <button type="submit" class="btn btn-link">Delete</button>
+             <input type="hidden" value="'.$id.'" name="id">
+           </form></td>
+         </tr>';
+       } ?>
 
-</tbody>
-</table>
+       </tbody>
+       </table>
+     </div>
+
    </body>
  </html>

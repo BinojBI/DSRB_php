@@ -36,17 +36,17 @@ require 'db/connection.php';
  }
  ?>
 <h2></h2>
-<div class="student">
-  <h2>Student Details</h2>
+<div class="container-fluid student" style="padding-right:1100px;"><br>
+  <h2>Student Details</h2><br>
   <form action="createNewStudent.php" method="post">
-    <input type="text" placeholder="First Name" name="firstName"><br>
-    <input type="text" placeholder="Last Name" name="lastName"><br>
-    <input type="text" placeholder="Reg NO" name="regNo"><br>
-    <input type="text" placeholder="Email" name="email"><br>
-    <input type="text" placeholder="User Name" name="userName"><br>
-    <input type="password" name="password" placeholder="Password"><br>
+    <input type="text" class="form-control" placeholder="First Name" name="firstName"><br>
+    <input type="text" class="form-control" placeholder="Last Name" name="lastName"><br>
+    <input type="text" class="form-control" placeholder="Reg NO" name="regNo"><br>
+    <input type="email" class="form-control" placeholder="Email" name="email"><br>
+    <input type="text" class="form-control" placeholder="User Name" name="userName"><br>
+    <input type="password" class="form-control" name="password" placeholder="Password"><br>
     <br>
-    <input type="submit" name="submit" value="submit">
+    <input type="submit" class="btn btn-primary" name="submit" value="submit">
   </form>
 
 </div>

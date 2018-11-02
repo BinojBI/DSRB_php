@@ -3,7 +3,7 @@ require 'cdn.php';
 ?>
 <?php
 $id=$_POST['id'];
-echo $id;
+//echo $id;
 $queryS = "SELECT * FROM student WHERE id='$id'";
 $result_set = mysqli_query($connection,$queryS);
 $record = mysqli_fetch_assoc($result_set);
@@ -58,18 +58,22 @@ if($resultP){
     <title>Edit student details</title>
   </head>
   <body>
-    <h2>Student Details</h2>
-    <form action="editStudent.php" method="post">
-
-      <input type="text" placeholder="First Name" name="firstName" value="<?php echo "$firstName"; ?>"><br>
-      <input type="text" placeholder="Last Name" name="lastName" value="<?php echo "$lastName"; ?>"><br>
-      <input type="text" style="background-color:rgb(210, 208, 208)" placeholder="Reg NO" name="regNo" value="<?php echo "$regNo"; ?>" readonly> <i>(You cannot edit this field)</i><br>
-      <input type="text" placeholder="Email" name="email" value="<?php echo "$email"; ?>"><br>
-      <input type="text" placeholder="User Name" name="userName" value="<?php echo "$userName";?>"><br>
-      <input type="password" name="password" placeholder="Password" value="<?php echo "$password";?>"><br>
+    <div class="container-fluid" style="padding-right:1100px;">
       <br>
-      <input type="hidden" value="<?php echo $id; ?>" name="ids">
-      <input type="submit" name="submit" value="submit">
-    </form>
+      <h2>Student Details</h2><br>
+      <form action="editStudent.php" method="post">
+
+        <input type="text" class="form-control" placeholder="First Name" name="firstName" value="<?php echo "$firstName"; ?>"><br>
+        <input type="text" class="form-control" placeholder="Last Name" name="lastName" value="<?php echo "$lastName"; ?>"><br>
+        <input type="text" class="form-control" style="background-color:rgb(210, 208, 208)" placeholder="Reg NO" name="regNo" value="<?php echo "$regNo"; ?>" readonly> <i>(You cannot edit this field)</i><br>
+        <input type="text" type="email" class="form-control" placeholder="Email" name="email" value="<?php echo "$email"; ?>"><br>
+        <input type="text" class="form-control" placeholder="User Name" name="userName" value="<?php echo "$userName";?>"><br>
+        <input type="password" class="form-control" name="password" placeholder="Password" value="<?php echo "$password";?>"><br>
+        <br>
+        <input type="hidden" value="<?php echo $id; ?>" name="ids">
+        <input type="submit" class="btn btn-primary" name="submit" value="Submit">
+      </form>
+    </div>
+
   </body>
 </html>
