@@ -43,18 +43,22 @@ if($resultD){
 
   </head>
   <body>
-    <h2>Student Details</h2>
-    <form action="deleteStudent.php" method="post">
-      <label>First Name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: <?php echo "$firstName"; ?></label><br>
-      <label>Last Name  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: <?php echo "$lastName"; ?></label><br>
-      <label>Registation No : <?php echo "$regNo"; ?></label><br>
-      <label>Email &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: <?php echo "$email"; ?></label><br>
-      <label>User Name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: <?php echo "$userName"; ?></label><br>
-
+    <div class="container">
       <br>
-        <input type="hidden" value="<?php echo $id; ?>" name="ids">
-      <input type="submit" name="submit" value="submit">
+      <h2>Student Details</h2><br>
+      <form action="deleteStudent.php" method="post">
+        <label>First Name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: <?php echo "$firstName"; ?></label><br>
+        <label>Last Name  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: <?php echo "$lastName"; ?></label><br>
+        <label>Registation No : <?php echo "$regNo"; ?></label><br>
+        <label>Email &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: <?php echo "$email"; ?></label><br>
+        <label>User Name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: <?php echo "$userName"; ?></label><br>
 
-    </form>
+        <br>
+          <input type="hidden" value="<?php echo $id; ?>" name="ids">
+        <input type="submit" class="btn btn-primary" name="submit" value="Delete">
+
+      </form>
+    </div>
+
   </body>
 </html>

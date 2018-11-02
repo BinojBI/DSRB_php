@@ -41,34 +41,36 @@ require 'db/connection.php';
      <title>Add marks</title>
    </head>
    <body>
-     <h2>Add marks</h2>
-     <form action="createNewMarks.php" method="post">
-       <label class="mr-sm-2" for="inlineFormCustomSelect">Student</label>
+     <div class="container-fluid" style="padding-right:1100px;"><br>
+       <h2>Add marks</h2><br>
+       <form action="createNewMarks.php" method="post">
+         <label class="mr-sm-2" for="inlineFormCustomSelect">Student</label>
 
-       <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="studentName">
-           <?php
-           echo '<option selected>Choose...</option>';
-           for ($i=1; $i<= $numOfRow ; $i++) {
-             $record = mysqli_fetch_assoc($result_set);
+         <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="studentName">
+             <?php
+             echo '<option selected>Choose...</option>';
+             for ($i=1; $i<= $numOfRow ; $i++) {
+               $record = mysqli_fetch_assoc($result_set);
 
-             $id = $record['id'];
-             $firstName = $record['firstName'];
-             $lastName = $record['lastName'];
+               $id = $record['id'];
+               $firstName = $record['firstName'];
+               $lastName = $record['lastName'];
 
-             echo '
-             <option value="'.$firstName.'">'.$firstName .' '. $lastName.'</option>';
-           }
-            ?>
+               echo '
+               <option value="'.$firstName.'">'.$firstName .' '. $lastName.'</option>';
+             }
+              ?>
+            </select><br><br>
+              <input type="text" class="form-control" placeholder="Maths" name="maths"><br>
+              <input type="text" class="form-control" placeholder="Chemistry" name="chemistry"><br>
+              <input type="text" class="form-control" placeholder="Physics" name="physics"><br>
 
-             </select>
-            <input type="text" placeholder="Maths" name="maths"><br>
-            <input type="text" placeholder="Chemistry" name="chemistry"><br>
-            <input type="text" placeholder="Physics" name="physics"><br>
-
-            <input type="submit" name="submit" value="submit">
+              <input type="submit" class="btn btn-primary" name="submit" value="submit">
 
 
-     </form>
+       </form>
+
+     </div>
 
    </body>
  </html>

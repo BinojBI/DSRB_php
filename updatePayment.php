@@ -67,8 +67,8 @@ $connection->close();
       <option <?php if($facilityFee=="Not Paid"){ echo "selected"; } ?>>Not Paid</option>
       <option <?php if($facilityFee=="Paid"){ echo "selected"; } ?>>Paid</option>
     </select><br>
-      <input type="hidden" value="<?php echo $regNo; ?>" name="regNo">
-      <input type="submit" name="submit" value="Update">
+      <input type="hidden" value="<?php echo $regNo; ?>" name="regNo"><br>
+      <input type="submit" class="btn btn-primary" name="submit" value="Update">
       </form>
     </div>
 
