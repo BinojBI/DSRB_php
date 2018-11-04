@@ -16,23 +16,19 @@ $total = $record['total'];
 
 if(isset($_POST['submit'])){
   $ids=$_POST['ids'];
-  echo $ids;
-  $studentName = $record['studentName'];
-  $maths = $record['maths'];
-  $chemistry = $record['chemistry'];
-  $physics = $record['physics'];
-  $total = $record['total'];
-echo $maths;
 
-  $registationFee = '';
-  $facilityFee = '';
+//  $studentName = $_POST['studentName'];
+  $maths = $_POST['maths'];
+  $chemistry = $_POST['chemistry'];
+  $physics = $_POST['physics'];
+  $total = $maths+$chemistry+$physics;
 
 $queryU = "UPDATE marks SET maths='$maths',chemistry='$chemistry',physics='$physics',total='$total' WHERE id='$ids'";
 $result = mysqli_query($connection, $queryU);
 
 
 if($result){
-// echo "<script> location.href='marks.php'; </script>";
+ echo "<script> location.href='marks.php'; </script>";
  echo "1 record updated Marks";
   echo mysqli_error($connection);
 
