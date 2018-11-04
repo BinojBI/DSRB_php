@@ -9,12 +9,16 @@ require 'header.php';
      <title>Home Page</title>
    </head>
    <body>
-     <h2>hello</h2>
-     <div class="links">
-       <a href="student.php">Student</a><br>
-       <a href="marks.php">Marks</a><br>
-       <a href="statistics.php">Statistics</a><br>
+     <div class="container">
+       <br>
+       <h2 class="text-center">DIGITAL STUDENT RECORD BOOK</h2><br>
+       <div class="links">
+         <a href="student.php">Student</a><br>
+         <a href="marks.php">Marks</a><br>
+         <a href="statistics.php">Statistics</a><br>
+       </div>
      </div>
+
 
    </body>
  </html>

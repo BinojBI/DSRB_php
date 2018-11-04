@@ -18,6 +18,7 @@ $numOfRow = mysqli_num_rows($result_set);
   <body>
     <div class="container">
       <br>
+      <h2>Students</h2><br>
       <a href="createNewStudent.php">Create new</a><br><br>
       <table class="table">
       <thead>

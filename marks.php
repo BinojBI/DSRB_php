@@ -17,6 +17,8 @@ require 'db/connection.php';
    <body>
      <div class="container">
        <br>
+
+       <h2>Marks</h2><br>
        <a href="createNewMarks.php">Create new</a><br><br>
        <table class="table">
        <thead>
