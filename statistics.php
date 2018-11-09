@@ -13,7 +13,8 @@ $maxAverage = 0;
  <html lang="en" dir="ltr">
    <head>
      <meta charset="utf-8">
-     <title></title>
+     <title>Statistics Page</title>
+     <link rel="stylesheet" href="CSS/student.css">
    </head>
    <body>
      <div class="container"><br>

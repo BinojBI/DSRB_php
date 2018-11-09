@@ -13,6 +13,7 @@ require 'db/connection.php';
    <head>
      <meta charset="utf-8">
      <title>Marks Page</title>
+     <link rel="stylesheet" href="CSS/student.css">
    </head>
    <body>
      <div class="container">

@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="CSS/admin.css">
   </head>
 <body id="LoginForm">
+  <!-- model -->
+  <!-- Button trigger modal -->
+
+  <!-- model content -->
 <div class="container">
 <br><br>
 <div class="login-form">
