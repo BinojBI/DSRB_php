@@ -11,6 +11,7 @@ $numOfRow = mysqli_num_rows($result_set);
   <head>
     <meta charset="utf-8">
     <title>Payments page</title>
+    <link rel="stylesheet" href="CSS/student.css">
   </head>
   <body>
       <div class="container"><br>
