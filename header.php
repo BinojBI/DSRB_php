@@ -1,5 +1,13 @@
 <?php
 
+if (isset($_POST['logout'])) {
+  session_start();
+  session_unset();
+// destroy the session
+session_destroy();
+//echo "session destroyed";
+//echo "<script> location.href='index.php'; </script>";
+}
  ?>
  <!DOCTYPE html>
  <html lang="en" dir="ltr">
@@ -38,10 +46,27 @@
            <a class="nav-link" href="payments.php">Payments</a>
          </li>
        </ul>
-       <form class="form-inline my-2 my-lg-0">
+       <?php
 
-         <button class="btn btn-outline-light my-2 my-sm-0" data-toggle="modal" data-target="#myModal"  type="button">Login</button>
-       </form>
+      if (isset($_SESSION['susername'])){
+        ?>
+        <form action="index.php" method="post">
+
+          <button type="submit" class="btn btn-outline-light my-2 my-sm-0" name="logout"  >Logout</button>
+        </form>
+        <?php
+      }else {
+      ?>
+      <form class="form-inline my-2 my-lg-0">
+
+        <button class="btn btn-outline-light my-2 my-sm-0" data-toggle="modal" data-target="#myModal"  type="button">Login</button>
+      </form>
+
+      <?php
+      }
+
+       ?>
+
      </div>
    </nav>
    <script type="text/javascript" src="js/mdb.min.js"></script>

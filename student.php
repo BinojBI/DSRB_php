@@ -1,7 +1,13 @@
-<?php require 'header.php';
+<?php
+
 require 'db/connection.php';
+session_start();
+if (isset($_SESSION['susername'])){
+require 'header.php';
+
 ?>
 <?php
+
 $query = "SELECT * FROM student";
 $result_set = mysqli_query($connection,$query);
 $numOfRow = mysqli_num_rows($result_set);
@@ -74,4 +80,12 @@ $numOfRow = mysqli_num_rows($result_set);
     </div>
 
   </body>
+
 </html>
+<?php
+}else {
+  echo "<script> location.href='index.php'; </script>";
+  //echo "password not entered";
+
+}
+ ?>
