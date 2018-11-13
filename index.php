@@ -1,37 +1,13 @@
 <?php
 
+session_start();
+if(isset($_SESSION['susername'])){
+//  echo "logged in";
+  require 'header.php';
 
-
-if (isset($_POST['submit'])) {
-  $userName = $_POST['userName'];
-  $password = $_POST['password'];
-
-if ($userName=="binoj" && $password=="asd") {
-  session_start();
-
-  $_SESSION['susername'] = $userName;
-  $_SESSION['spassword'] = $password;
-
-  require_once 'header.php';
 }else {
     require_once 'header.php';
-    require 'login.php';
-}
-
-}
-
-else {
-
-  if (session_id() == '') {
-    require_once 'header.php';
-    require 'login.php';
-  }else {
-    session_start();
-    require_once 'header.php';
-  }
-
-
-
+    //  echo "not logged in";
 }
 
  ?>
