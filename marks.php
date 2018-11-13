@@ -1,5 +1,8 @@
-<?php require 'header.php';
+<?php 
 require 'db/connection.php';
+session_start();
+if (isset($_SESSION['susername'])){
+require 'header.php';
  ?>
  <?php
  $query = "SELECT * FROM marks";
@@ -71,3 +74,10 @@ require 'db/connection.php';
 
    </body>
  </html>
+ <?php
+ }else {
+   echo "<script> location.href='index.php'; </script>";
+   //echo "password not entered";
+
+ }
+  ?>

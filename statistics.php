@@ -1,5 +1,10 @@
-<?php require 'header.php';
-require 'db/connection.php';?>
+<?php
+require 'db/connection.php';
+session_start();
+if (isset($_SESSION['susername'])){
+require 'header.php';
+
+?>
 <?php
 $query = "SELECT * FROM marks ORDER BY total DESC";
 $result_set = mysqli_query($connection,$query);
@@ -78,3 +83,10 @@ $maxAverage = 0;
 </table>
    </body>
  </html>
+ <?php
+ }else {
+   echo "<script> location.href='index.php'; </script>";
+   //echo "password not entered";
+
+ }
+  ?>

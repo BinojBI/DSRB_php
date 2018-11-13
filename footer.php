@@ -1,5 +1,6 @@
 <!-- Footer -->
-<footer class="page-footer font-small" style="background-color:rgb(170, 102, 204);">
+
+<footer class="page-footer font-small" style="background-color:rgb(170, 102, 204); margin-top:9px;">
 
     <!-- Footer Links -->
     <div class="container">
@@ -42,7 +43,7 @@
     <!-- Footer Links -->
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <div class="footer-copyright text-center py-2">© 2018 Copyright:
       <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
     </div>
     <!-- Copyright -->

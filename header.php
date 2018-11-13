@@ -1,7 +1,21 @@
 <?php
+ error_reporting(E_ALL); ini_set('display_errors',0);
+if (isset($_POST['submit'])) {
+  $userName = $_POST['userName'];
+  $password = $_POST['password'];
+
+if ($userName=="binoj" && $password=="asd") {
+  session_start();
+
+  $_SESSION['susername'] = $userName;
+  $_SESSION['spassword'] = $password;
+
+  //require_once 'header.php';
+}
+}
 
 if (isset($_POST['logout'])) {
-  session_start();
+  //session_start();
   session_unset();
 // destroy the session
 session_destroy();
@@ -56,7 +70,9 @@ session_destroy();
         </form>
         <?php
       }else {
+        require 'login.php';
       ?>
+
       <form class="form-inline my-2 my-lg-0">
 
         <button class="btn btn-outline-light my-2 my-sm-0" data-toggle="modal" data-target="#myModal"  type="button">Login</button>
